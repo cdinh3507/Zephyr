@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public bool load = false;
     public Vector2 lastCheckPointPos;
+    public Vector2 startingPoint;
+
 
     [SerializeField]
     private GameObject player;
@@ -65,6 +67,13 @@ public class GameManager : MonoBehaviour
 
     public void SaveGame() {
         SaveSystem.SaveGame(this);
+    }
+
+    public void resetStartingPoint()
+    {
+        lastCheckPointPos.x = startingPoint.x;
+        lastCheckPointPos.y = startingPoint.y;
+
     }
 
     public void LoadGame() {

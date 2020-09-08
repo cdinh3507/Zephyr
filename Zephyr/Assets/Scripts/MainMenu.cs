@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame() {
         SceneManager.LoadScene(newGameScene);
+        gm.resetStartingPoint();
     }
 
     public void QuitGame() {
