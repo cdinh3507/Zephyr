@@ -42,7 +42,10 @@ public class BasicEnemyController : MonoBehaviour
         hitParticle,
         DeathChunkParticle,
         DeathBloodParticle;
+    [SerializeField]
+    private bool flip;
 
+    public bool knockback;
 
     private float 
         currentHealth,
@@ -109,7 +112,10 @@ public class BasicEnemyController : MonoBehaviour
 
         if(!groundDetected || wallDetected)
         {
-            Flip();
+            if (flip)
+            {
+                Flip();
+            }
         } else
         {
             movement.Set(movementSpeed * facingDirection, aliveRb.velocity.y);
@@ -130,6 +136,7 @@ public class BasicEnemyController : MonoBehaviour
         movement.Set(knockbackSpeed.x * damageDirection, knockbackSpeed.y);
         aliveRb.velocity = movement;
         aliveAnim.SetBool("Knockback", true);
+        knockback = true;
     }
 
     private void UpdateKnockbackState()
@@ -143,6 +150,7 @@ public class BasicEnemyController : MonoBehaviour
     private void ExitKnockbackState()
     {
         aliveAnim.SetBool("Knockback", false);
+        knockback = false;
     }
 
     //DEAD STATE--------------------------------
