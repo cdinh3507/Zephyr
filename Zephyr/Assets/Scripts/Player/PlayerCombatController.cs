@@ -35,7 +35,10 @@ public class PlayerCombatController : MonoBehaviour
 
     private void Update()
     {
-        CheckCombatInput();
+        if (Time.timeScale != 0)
+        {
+            CheckCombatInput();
+        }
         CheckAttacks();
     }
 

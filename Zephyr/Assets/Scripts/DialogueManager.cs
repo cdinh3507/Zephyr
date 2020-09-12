@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
 
     public Animator animator;
+    public Animator playerAnimator;
 
     private Queue<string>sentences;
 
@@ -55,6 +56,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         Time.timeScale = 0;
+        playerAnimator.SetBool("cutscene", true);
         DisplayNextSentence();
     }
 
@@ -89,5 +91,6 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
         Time.timeScale = 1;
+        playerAnimator.SetBool("cutscene", false);
     }
 }

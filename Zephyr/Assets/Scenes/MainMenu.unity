@@ -380,9 +380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   load: 0
-  lastCheckPointPos: {x: -9.95, y: -0.28}
-  startingPoint: {x: 0, y: 0}
-  player: {fileID: 0}
+  lastCheckPointPos: {x: -22.03, y: -2.3}
+  startingPoint: {x: -22.03, y: -2.3}
   respawnTime: 0
 --- !u!4 &155155746
 Transform:

@@ -7,6 +7,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private float maxHealth;
 
+    public GameObject DeadP;
+
     private float currentHealth;
 
     private GameManager GM;
@@ -31,6 +33,7 @@ public class PlayerStats : MonoBehaviour
     {
         //death animation here maybe??
         GM.Respawn();
+        Instantiate(DeadP, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 

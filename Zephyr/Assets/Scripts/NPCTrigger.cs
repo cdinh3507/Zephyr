@@ -10,6 +10,8 @@ public class NPCTrigger : MonoBehaviour
     public Dialogue dialogue;
     private bool touchPlayer;
 
+    public PlayerController player; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,7 @@ public class NPCTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && touchPlayer)
+        if (Input.GetKeyDown(KeyCode.W) && touchPlayer && player.GetGrounded())
         {
             Debug.Log("trigger");
             dt.TriggerDialogue();

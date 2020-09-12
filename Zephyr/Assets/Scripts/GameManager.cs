@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     public Vector2 startingPoint;
 
 
-    [SerializeField]
-    private GameObject player;
+    //[SerializeField]
+    //private GameObject player;
     [SerializeField]
     private float respawnTime;
 
@@ -79,8 +79,11 @@ public class GameManager : MonoBehaviour
     public void LoadGame() {
        PlayerData data = SaveSystem.LoadGame();
 
-       lastCheckPointPos.x = data.position[X_COORD];
-       lastCheckPointPos.y = data.position[Y_COORD];
+        if (data != null)
+        {
+            lastCheckPointPos.x = data.position[X_COORD];
+            lastCheckPointPos.y = data.position[Y_COORD];
+        }
 
     }
 

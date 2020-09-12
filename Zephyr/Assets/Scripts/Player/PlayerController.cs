@@ -99,7 +99,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckInput();
+        if (Time.timeScale != 0)
+        {
+            CheckInput();
+        }
         CheckMovementDirection();
         UpdateAnimations();
         CheckIfCanJump();
@@ -258,6 +261,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
         anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("isWallSliding", isWallSliding);
+
     }
 
     private void CheckInput()
@@ -309,7 +313,8 @@ public class PlayerController : MonoBehaviour
         {
             if (Time.time >= (lastDash + dashcoolDown))
             {
-                AttemptToDash();
+                //disabled dash
+                //AttemptToDash();
             }
         }
     }
@@ -444,6 +449,11 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
             }
         }
+    }
+
+    public bool GetGrounded()
+    {
+        return isGrounded;
     }
 
     public void DisableFlip()
