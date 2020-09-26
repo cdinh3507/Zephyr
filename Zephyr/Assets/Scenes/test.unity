@@ -32712,7 +32712,7 @@ PrefabInstance:
         type: 3}
       propertyPath: DeadP
       value: 
-      objectReference: {fileID: 3846609655320050791, guid: f1df10cd8707e2b46bbba1336c200033,
+      objectReference: {fileID: 7186321745818819581, guid: 1eb7f0feda625cc4f8164ac331a7dfc9,
         type: 3}
     - target: {fileID: 6374530043728261443, guid: ba047d23b2930ae4baef3ec189806e9d,
         type: 3}
